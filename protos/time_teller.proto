@@ -1,0 +1,20 @@
+/*
+Copyright © 2023 Daniel Valdivia <c@dvm.sh>
+*/
+syntax = "proto3";
+
+option go_package = "./";
+
+package example;
+
+service TimeTeller {
+  rpc WhatTimeIsIt (TellRequest) returns (TimeResponse) {}
+}
+
+message TellRequest {
+  string timezone = 1;
+}
+
+message TimeResponse {
+  string message = 1;
+}
